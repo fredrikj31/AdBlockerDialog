@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #3498db;
+	display: flex;
+	align-items: center;
+	font-family: "Muli", sans-serif;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.popup {
+	background-color: #fff;
+	box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	padding: 20px 30px;
+	text-align: center;
+	max-width: 500px;
+}
+
+.popup p {
+	color: #555;
+}
+
+.btn-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn {
+	background-color: #3498db;
+	border: 0;
+	border-radius: 5px;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+	color: #fff;
+	cursor: pointer;
+	font-size: 18px;
+	padding: 15px 30px;
+	position: relative;
+	margin: 10px;
+}
+
+.btn:active {
+	box-shadow: none;
+	transform: scale(0.98);
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.btn.ghost {
+	background-color: #fff;
+	color: #3498db;
+	box-shadow: none;
+}
+
+.popup img {
+	width: 70px;
+}
+
+.floating-btn {
+	border-radius: 26.5px;
+	background-color: #001f61;
+	border: 1px solid #001f61;
+	box-shadow: 0 16px 22px -17px #03153b;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 20px;
+	padding: 12px 20px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 2;
+}
+
+.floating-btn:hover {
+	background-color: #ffffff;
+	color: #001f61;
+}
+
+.floating-btn:focus {
+	outline: none;
+}
+
+.floating-text {
+	background-color: #001f61;
+	border-radius: 10px 10px 0 0;
+	color: #fff;
+	font-family: "Muli";
+	padding: 7px 15px;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	z-index: 998;
+}
+
+.floating-text a {
+	color: #ff7500;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+	.social-panel-container.visible {
+		transform: translateX(0px);
+	}
+
+	.floating-btn {
+		right: 10px;
+	}
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 100; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+}
