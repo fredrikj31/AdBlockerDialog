@@ -5,7 +5,45 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="./style.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<!-- Detection -->
+    <!--
+		The variables used by FuckAdBlock is initialized
+        to be sure that another script has not used
+    -->
+    <script>var fuckAdBlock = undefined, FuckAdBlock = undefined;</script>
+    <!--
+		Added the attribute "integrity" to be sure that the original script
+        is not modified by an extension or other.
+    -->
+    <script src="./fuckadblock.min.js"></script>
+    <script>
+		var modal = document.getElementById("myModal");
+
+		var adBlockDetected = function() {
+			//$('h1 span').text('yes');
+			console.log("Adblock detected");
+			modal.style.display = "block";
+        }
+        var adBlockUndetected = function() {
+			console.log("Adblock not detected");
+        }
+        if(typeof  FuckAdBlock === 'undefined') {
+			$(document).ready(adBlockDetected);
+        } else {
+			fuckAdBlock.on(true, adBlockDetected).on(false, adBlockUndetected);
+        }
+        // It removes the variable "fuckadblock" and "FuckAdBlock
+        // so that it not be exploited by another script later
+        // but beware, you can not use it too!
+        fuckAdBlock = undefined;
+        
+        // Do not use FuckAdBlock outside this area
+        // (between importing the script and the line above)
+		</script>
+
 </head>
 
 <body>
@@ -24,11 +62,11 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<button class="floating-btn" id="myBtn">
 		Open Dialog
 	</button>
-	<script src="script.js"></script>
+	<script src="./script.js"></script>
 </body>
 
 </html>
